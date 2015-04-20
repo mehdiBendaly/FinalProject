@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="theme.css">
+    </head>
+    
+    <body>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="banner.jpg" class="center-block img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-pills">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="languageDefinition.html">Language definition</a>
+                                    </li>
+                                    <li>
+                                        <a href="BNF.html">BNF</a>
+                                    </li>
+                                    <li>
+                                        <a href="chomskyGrammar.html">Chomsk Grammar</a>
+                                    </li>
+                                    <li>
+                                        <a href="context.html">Conext-sensitive and free Languages</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Formal Languages <span class="caret"></span></a>
+                            </li>
+                            <li class="active dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="Topdown">
+                                        <a href="topDown.html">Top-down parsing</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammaticalRules.html">Grammatical rules 1 and 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="leftRecursion.html">Left recursion removal</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammarAmbiguity.html">Grammar ambiguity</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Syntax Analysis&nbsp;<span class="caret"></span></a>
+                            </li>
+                            <li>
+                                <a href="applet.html">Applet</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1 class="text-left">Grammatical rules 1 &amp; 2</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-justify">Grammatical rules 1 &amp; 2 forbid the usage of left recursion. To solve
+                            this problem, left recursion has to be exchanged for right recursion.
+                            <br>
+                            <br>
+                            <b>Rule 1:&nbsp;
+                                <br>
+                            </b>
+                            <br>For the given grammar:</p>
+                        <div class="section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <pre>
+                                            <code>
+                                                <br>A:: = ζ1 | ζ2 | … | ζn</code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        <sentence>
+                            <subject>
+                                <predicate>
+                                    <subject>
+                                        <predicate>the FIRST sets in sentences, which can be derived from ζi must be separated,
+                                            i.e.: &nbsp;</predicate>
+                                    </subject>
+                                </predicate>
+                            </subject>
+                        </sentence>
+                    </p>
+                    <div class="section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <pre>
+                                        <code>
+                                            <br>first(ζi) ∩ first(ζj) = ∅ for each i ≠ j</code>
+                                    </pre>
+                                </div>
+                            </div>
+                            <p>First (ζ) is a set of all the terminal symbols, which can occur at the
+                                first position in the sentences derived from ζ. This set can be determined
+                                from the following rules:
+                                <br>
+                                <br>1. If the first symbol of the argument is a terminal symbol then</p>
+                            <pre>
+                                <code>
+                                    <br>first(αζ) = {a}</code>
+                            </pre>
+                            <p>
+                                <br>2. If the first symbol is a non-terminal and the production exists</p>
+                            <pre>
+                                <code>
+                                    <br>A::= α1| α2 | … | αn</code>
+                            </pre>
+                            <p>
+                                <br>then</p>
+                            <pre>
+                                <code>
+                                    <br>first(Aζ)=first(α1) ∪ first(α2) ∪… ∪ first(αn)</code>
+                            </pre>
+                            <p>
+                                <br>In example 3 x ∈ first(A) i x ∈ first(B), therefore the first production
+                                does not fulfill rule 1. To fulfill rule 1, syntax revision for the language
+                                from example 3 has to be performed it is done by extracting the common
+                                part “from brackets.” The below grammar is equal to the grammar from example
+                                3 because it generates the same set of sentences:</p>
+                            <pre>
+                                <code>
+                                    <br>S :: = C | xS
+                                    <br>C :: = y | z</code>
+                            </pre>
+                            <p>
+                                <br>Generally, for a production of a form</p>
+                            <pre>
+                                <code>
+                                    <br>A:: = αζ1 | αζ2 | ... | αζn</code>
+                            </pre>
+                            <p>Left-factoring is applied (extracting the factor from brackets). Production
+                                (1) is rewritten as productions (2):</p>
+                            <pre>
+                                <code>
+                                    <br>A :: = αA’
+                                    <br>A’ :: = ζ1 | ζ2 | ... | ζn</code>
+                            </pre>
+                            <p>Example :&nbsp;
+                                <br>
+                                <br>Given a grammar:</p>
+                            <pre>
+                                <code>
+                                    <br>S :: = Ax
+                                    <br>A :: = x | ε</code>
+                            </pre>
+                            <p>where: ε - empty sequence of symbols &nbsp;</p>
+                            <pre>
+                                <code>
+                                    <br>S | x
+                                    <br>Ax | x
+                                    <br>xx | x
+                                    <br>x | -</code>
+                            </pre>
+                            <p>Using the production A :: = x instead of A :: = ε. The problem of empty
+                                symbol arises, that occurs when there is a possibility to derive an empty
+                                sequence of symbols from a non-terminal symbol. To avoid such a situation,
+                                the grammatical rule 2 is applied.&nbsp;
+                                <br>
+                                <br>Rule 2:&nbsp;
+                                <br>
+                                <br>For the each symbol A ∈ N, from which an empty symbol can be derived (A
+                                →* ε), a set of its FIRST&nbsp;symbols must be separated from the set of
+                                symbols, which can follow any sequence derived from A, i.e.</p>
+                            <pre>
+                                <code>
+                                    <br>first(A) ∩ follow(A) = ∅</code>
+                            </pre>
+                            <p>A set follow(A)is determined as follows for each production Pi of a form:</p>
+                            <pre>
+                                <code>
+                                    <br>X::=ζΑη</code>
+                            </pre>
+                            <p>Si means first(ηi); and a set follow(A) is a sum of all sets . If only
+                                an empty symbol can be derived from one hi then a set follow(X) must be
+                                included into follow(A) also:</p>
+                            <pre>
+                                <code>
+                                    <br>first(A) = follow(A) = {x}</code>
+                            </pre>
+                            <p>If the same pattern of symbols is repeated several times, it is expressed
+                                by means of recursive definition of sentence construction.&nbsp;
+                                <br>
+                                <br>Production</p>
+                            <pre>
+                                <code>
+                                    <br>A :: = B | AB</code>
+                            </pre>
+                            <p>generates sentences: B, BB, BBB, … &nbsp;</p>
+                            <pre>
+                                <code>
+                                    <br>first(B) ∩ first(AB) = first (B) ≠ ∅</code>
+                            </pre>
+                            <p>While production:</p>
+                            <pre>
+                                <code>
+                                    <br>A:: = ε | AB</code>
+                            </pre>
+                            <p>generates sentences ε, B, BB, BBB, .... According to rule 1, their usage
+                                is forbidden, because:</p>
+                            <pre>
+                                <code>
+                                    <br>first(A) = first(B)</code>
+                            </pre>
+                            <p>and therefore:</p>
+                            <pre>
+                                <code>
+                                    <br>first(A) ∩ follow(A) = first (B) ≠ ∅</code>
+                            </pre>
+                            <p contenteditable="true">In both considered productions, left recursion occurs.</p>
+                        </div>
+                    </div>
+                    <code>
+                        <br>
+                        <br>
+                        <br>
+                        <footer class="section section-info">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-12">
+                                        <p class="text-inverse text-right">© Copyright all rights reserved</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

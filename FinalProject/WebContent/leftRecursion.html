@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="theme.css">
+    </head>
+    
+    <body>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="banner.jpg" class="center-block img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-pills">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="languageDefinition.html">Language definition</a>
+                                    </li>
+                                    <li>
+                                        <a href="BNF.html">BNF</a>
+                                    </li>
+                                    <li>
+                                        <a href="chomskyGrammar.html">Chomsk Grammar</a>
+                                    </li>
+                                    <li>
+                                        <a href="context.html">Conext-sensitive and free Languages</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Formal Languages <span class="caret"></span></a>
+                            </li>
+                            <li class="active dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="Topdown">
+                                        <a href="topDown.html">Top-down parsing</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammaticalRules.html">Grammatical rules 1 and 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="leftRecursion.html">Left recursion removal</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammarAmbiguity.html">Grammar ambiguity</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Syntax Analysis&nbsp;<span class="caret"></span></a>
+                            </li>
+                            <li>
+                                <a href="applet.html">Applet</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1 class="text-left">Left recursion removal</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-justify">According to 1 &amp; 2 grammatical rules, the usage of left recursion
+                            is forbidden in LL grammars. Problem solutions:&nbsp;
+                            <br>
+                            <br>1. exchange of left recursion into right recursion
+                            <br>
+                            <br>
+                        </p>
+                        <div class="section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <pre>
+                                            <code>
+                                                <br>A :: = ε| BA</code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        <sentence>
+                            <subject>
+                                <predicate>
+                                    <subject>
+                                        <predicate>2. substitution of left recursion with an iteration.
+                                            <br>
+                                            <br>In EBNF notation, description {B} means iteration i.e. repetition of B
+                                            symbol zero, one, two, ... or infinite number of times. Production:</predicate>
+                                    </subject>
+                                </predicate>
+                            </subject>
+                        </sentence>
+                    </p>
+                    <div class="section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <pre>
+                                        <code>
+                                            <br>A :: = {B}</code>
+                                    </pre>
+                                </div>
+                            </div>
+                            <p>generates sentences: ε, B, BB, BBB, ...
+                                <br>To remove left-recursion, the formulae (1,2) are used.
+                                <br>Production (3)</p>
+                            <pre>
+                                <code>
+                                    <br>A :: = Aα1 | Aα2 | … | Aαn | β1 | β2 | … | βm</code>
+                            </pre>
+                            <p>
+                                <br>It can be exchanged for two productions equal to it.</p>
+                            <pre>
+                                <code>
+                                    <br>A:: = β1A’ | β2A’ | … | βmA’
+                                    <br>A’:: = α1A’ | α2A’ | … | αnA’ | ε</code>
+                            </pre>
+                            <p>Example :
+                                <br>
+                                <br>An example of analysis of grammar with left recursion removal and left-factoring.
+                                <br>
+                                <br>Given a grammar:</p>
+                            <pre>
+                                <code>
+                                    <br>S::= -A | -a
+                                    <br>A::= B | A * B
+                                    <br>B::= C |B +C | b
+                                    <br>C::= c | d</code>
+                            </pre>
+                            <p>1. Finding non-terminal symbols N={A,B,C,D} and end T={a,*,+,b,c,d}.&nbsp;
+                                <br>
+                                <br>2.Sets of first and follow symbols for each non-terminal symbol.</p>
+                            <pre>
+                                <code>
+                                    <br>first(S)={-}
+                                    <br>first(A)=first(B)=first(C) ∪ {b}={c,d,b}
+                                    <br>first(B)=first(C) ∪ {b}={c,d,b}
+                                    <br>first(C)={c,d}
+                                    <br>follow(S)= ∅
+                                    <br>follow(A)=follow(S) ∪ {*}={*}
+                                    <br>follow(B)=follow(A) ∪ {+}={*,+}
+                                    <br>follow(C)=follow(B)={*,+}</code>
+                            </pre>
+                            <p>Checking if given productions from this grammar fulfill grammatical rules
+                                1 and 2. Rule 2 is fulfilled because no production generates an empty sequence
+                                of symbols.&nbsp;
+                                <br>
+                                <br>Checking Rule 1:&nbsp;
+                                <br>
+                                <br>For production S:</p>
+                            <pre>
+                                <code>
+                                    <br>{-} ∩{-}≠ ∅ Rule 1 is not fulfilled!</code>
+                            </pre>
+                            <p>For production A:</p>
+                            <pre>
+                                <code>
+                                    <br>first(B) ∩(A)≠ ∅ Rule 1 is not fulfilled!</code>
+                            </pre>
+                            <p>For production B:&nbsp;</p>
+                            <pre>
+                                <code>
+                                    <br>first(C) ∩ first(B)≠ ∅
+                                    <br>first(C) ∩{b}≠ ∅ Rule 1 is not fulfilled!
+                                    <br>first(B) ∩{b}≠ ∅</code>
+                            </pre>
+                            <p>For production C:</p>
+                            <pre>
+                                <code>
+                                    <br>{c}∩ {d}=∅Rule 1 is fulfilled!</code>
+                            </pre>
+                            <p>In the case of production S, left-factoring should be applied. For productions
+                                B and C, left recursion should be removed.&nbsp;
+                                <br>
+                                <br>Revised Grammar:</p>
+                            <pre>
+                                <code>
+                                    <br>S::= -S`
+                                    <br>S`::=A |a
+                                    <br>A::=BA`
+                                    <br>A`::=*BA` | ε
+                                    <br>B::=CB` | bB`
+                                    <br>B`::=+CB` | ε
+                                    <br>C:: c | d</code>
+                            </pre>
+                            <p>4.&nbsp;Finding sets of first and follow symbols for each non-terminal
+                                symbol of the revised grammar:</p>
+                            <pre>
+                                <code>
+                                    <br>first(S)={-}
+                                    <br>first(S`)=first(A) ∪ { a}={c,d,b,a}
+                                    <br>first(A)=first(B)={c,d,b}
+                                    <br>first(A`)={*,ε}
+                                    <br>first(B)=first(C) ∪ {b}={c,d,b}
+                                    <br>first(B`)={+,ε}
+                                    <br>first(C)={c,d}
+                                    <br>follow(S)= ∅
+                                    <br>follow(S`)=follow(S)= ∅
+                                    <br>follow(A)=follow(S`)=∅
+                                    <br>follow(A`)=follow(A)= ∅
+                                    <br>follow(B)=first(A`)-ε={*}
+                                    <br>follow(B`)=follow(B)={*}
+                                    <br>follow(C)=first(B`)-ε={+}</code>
+                            </pre>
+                            <p>Then, checking if the revised grammar fulfills the grammatical rules 1
+                                and 2:&nbsp;
+                                <br>
+                                <br>For production S i S`:</p>
+                            <pre>
+                                <code>
+                                    <br>first (A) ∩ a= ∅ Rule 1 is fulfilled!</code>
+                            </pre>
+                            <p>For production A:&nbsp;</p>
+                            <pre>
+                                <code>
+                                    <br>first(B) ∩ ε = ∅ Rule 1 is fulfilled!</code>
+                            </pre>
+                            <p>For production A`:</p>
+                            <pre>
+                                <code>
+                                    <br>{*}∩ ε = ∅ Rule 1 is fulfilled!</code>
+                            </pre>
+                            <p>For production B:</p>
+                            <pre>
+                                <code>
+                                    <br>first(C) ∩ {b} = ∅ Rule 1 is fulfilled!</code>
+                            </pre>
+                            <p>For production C, rule 1 was already fulfilled, this production was not
+                                changed.&nbsp;
+                                <br>
+                                <br>For all productions except&nbsp;for A` and B`, rule 2 is fulfilled because
+                                they do not generate an empty sequence of symbols. In such a case, rule
+                                2 has to be checked for productions A` i B`.&nbsp;
+                                <br>
+                                <br>For production A`:</p>
+                            <pre>
+                                <code>
+                                    <br>first (A`)∩ follow(A`)={*,ε}∩{∅}=∅ Rule II is fulfilled!</code>
+                            </pre>
+                            <p>For production B`:</p>
+                            <pre>
+                                <code>
+                                    <br>first(B`) ∩ follow(B`) = {+,ε} ∩ (*) = ∅ Rule II is fulfilled!</code>
+                            </pre>
+                            <p>The application of left-factoring and left recursion removal allowed to
+                                revise the grammar that now fulfills grammatical rules 1 and 2.</p>
+                        </div>
+                    </div>
+                    <code>
+                        <br>
+                        <br>
+                        <br>
+                        <footer class="section section-info">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-12">
+                                        <p class="text-inverse text-right">© Copyright all rights reserved</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

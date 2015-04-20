@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="theme.css">
+    </head>
+    
+    <body>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="banner.jpg" class="center-block img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-pills">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="languageDefinition.html">Language definition</a>
+                                    </li>
+                                    <li>
+                                        <a href="BNF.html">BNF</a>
+                                    </li>
+                                    <li>
+                                        <a href="chomskyGrammar.html">Chomsk Grammar</a>
+                                    </li>
+                                    <li>
+                                        <a href="context.html">Conext-sensitive and free Languages</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Formal Languages <span class="caret"></span></a>
+                            </li>
+                            <li class="active dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="Topdown">
+                                        <a href="topDown.html">Top-down parsing</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammaticalRules.html">Grammatical rules 1 and 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="leftRecursion.html">Left recursion removal</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammarAmbiguity.html">Grammar ambiguity</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Syntax Analysis&nbsp;<span class="caret"></span></a>
+                            </li>
+                            <li>
+                                <a href="applet.html">Applet</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1 class="text-left">Top-down Parsing</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-justify">Syntax analysis deals with derivation of sentence structures and sentences.
+                            Main task of syntax analysis is the design of derivation algorithms for
+                            languages with complex grammatical structures.&nbsp;
+                            <br>
+                            <br>Top-down parsing can be viewed as an attempt to find left-most derivations
+                            of an input-stream by searching for parse-trees using a top-down expansion
+                            of the given formal grammar rules.&nbsp;
+                            <br>
+                            <br>As the result&nbsp;of top-down analysis, the language sentence is generated
+                            from the start symbol.
+                            <br>
+                            <br>Example1:</p>
+                        <div class="section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <pre>
+                                            <code>
+                                                <br>&lt;sentence&gt; ::= &lt;objective&gt; &lt;predicate&gt;
+                                                <br>&lt;objective&gt;::= flowers | stars
+                                                <br>&lt;predicate&gt;::= bloom | shine</code>
+                                        </pre>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <pre>
+                                            <code>
+                                                <br>&lt;sentence&gt; | stars shine
+                                                <br>&lt;objective&gt; &lt;predicate&gt;| stars shine
+                                                <br>stars &lt;predicate&gt;| stars shine
+                                                <br>&lt;predicate&gt;| shine
+                                                <br>shine| shine
+                                                <br>- - - | - - -</code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>The sentence was generated from start symbol, in this case it is
+                        <sentence>, therefore it belongs to language. The process of sentence parsing has
+                            been presented graphically. On the left, the consecutive sequences of derivations
+                            from grammar are placed, whereas on the right, there is the input sequence
+                            of words remaining to be analysed. According to syntactic rules, the
+                            <subject>
+                                <predicate>construction can be called a sentence. Based on the second grammatical
+                                    production, the word stars can be directly generated from the symbol
+                                    <subject>so the word stars is removed from the input sequence. Next, the parser
+                                        checks the second part of the sentence. The word shine can be generated
+                                        directly from the symbol
+                                        <predicate>so the sentence parsing is completed successfully.
+                                            <br>Example 2:
+                                            <br>
+                                            <br>
+                                        </predicate>
+                                    </subject>
+                                </predicate>
+                            </subject>
+                        </sentence>
+                    </p>
+                    <div class="section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <pre>
+                                        <code>
+                                            <br>S::=xA|
+                                            <br>A::= z |yA</code>
+                                    </pre>
+                                </div>
+                                <div class="col-md-11">
+                                    <pre>
+                                        <code>
+                                            <br>S xyyz
+                                            <br>x A zyyz
+                                            <br>A yyz
+                                            <br>y A yyz
+                                            <br>A yz
+                                            <br>y A yz
+                                            <br>A z
+                                            <br>z z
+                                            <br>._ ._ ._. ._._._.</code>
+                                    </pre>
+                                </div>
+                            </div>
+                            <p>Syntax analysis consists of recreating the steps that generated the sentence.
+                                This process is called derivation, that is why the above-described algorithm
+                                is called the derivation algorithm. In both cases, the decision to replace
+                                a non-terminal symbol could be made after examining the consecutive symbol
+                                in the input sequence.</p>
+                        </div>
+                    </div>
+                    <code>
+                        <br>
+                        <br>
+                        <br>
+                        <footer class="section section-info">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-12">
+                                        <p class="text-inverse text-right">© Copyright all rights reserved</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

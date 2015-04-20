@@ -14,34 +14,103 @@
     <body>
         <div class="section">
             <div class="container">
-            		<img src="images/banner.jpg" align="middle" >
-            <br>
-<br><br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="banner.jpg" class="center-block img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="nav nav-pills">
                             <li>
                                 <a href="index.html">Home</a>
                             </li>
-                            <li>
-                                <a href="#">Formal Languages</a>
+                            <li class="dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="languageDefinition.html">Languages definition</a>
+                                    </li>
+                                    <li>
+                                        <a href="BNF.html">BNF</a>
+                                    </li>
+                                    <li>
+                                        <a href="chomskyGrammar.html">Chomsk Grammar</a>
+                                    </li>
+                                    <li>
+                                        <a href="context.html">Conext-sensitive and free Languages</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Formal Languages <span class="caret"></span></a>
                             </li>
-                            <li>
-                                <a href="#">Syntax Analysis</a>
+                            <li class="dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="Topdown">
+                                        <a href="topDown.html">Top-down parsing</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammaticalRules.html">Grammatical rules 1 and 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="leftRecursion.html">Left recursion removal</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammarAmbiguity.html">Grammar ambiguity</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Syntax Analysis&nbsp;<span class="caret"></span></a>
                             </li>
                             <li class="active">
                                 <a href="applet.html">Applet</a>
                             </li>
                             <li>
-                                <a href="#">Contact</a>
+                                <a href="contact.html">Contact</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <br>
-
-
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1>How to use it?</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-justify">The applet is an integral part of the webpage.&nbsp;
+                            <br>
+                            <br>It is used to find first and follow sets for given&nbsp;productions. This
+                            program also allows to revise grammars (elimination of left-factoring and
+                            recursion) so that they fulfill grammatical rules 1 and 2.&nbsp;
+                            <br>
+                            <br>When the user chooses one of the three available items, a window for the
+                            corresponding grammar&nbsp;shall be displayed. The moment all the correct
+                            answers are given, the “next” button appears at the bottom of the window.
+                            When this button is pressed by the user, the window closes and a new window
+                            is loaded. The selection window for productions that do not fulfill grammatical
+                            rules 1 and 2 has three states. In the initial state, nothing has been
+                            selected. The next two states depend on the answers given. “TRY AGAIN”
+                            message indicates that not all correct answers have been given.&nbsp;
+                            <br>
+                            <br>The&nbsp;moment all the correct answers are given, the “Next” button appears
+                            at the very bottom of the window. When this button is pressed, the window
+                            closes and a new window is loaded. In this window, productions need to
+                            be revised so that they fulfill grammatical rules 1 and 2.&nbsp;
+                            <br>
+                            <br>Finding these&nbsp;sets is completed when the button “Everything Was Executed
+                            Correctly” is displayed at the end.</p>
+                    </div>
+                </div>
             </div>
+            		<APPLET code="AppletApp.class" 
+		width="1800"
+		height="50"> 
+		</APPLET>
         </div>
         <div id="fullcarousel-example" data-interval="5000" class="carousel slide"
         data-ride="carousel">

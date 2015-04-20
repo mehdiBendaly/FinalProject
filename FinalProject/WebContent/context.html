@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="theme.css">
+    </head>
+    
+    <body>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <img src="banner.jpg" class="center-block img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="nav nav-pills">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="active dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="languageDefinition.html">Language definition</a>
+                                    </li>
+                                    <li>
+                                        <a href="BNF.html">BNF</a>
+                                    </li>
+                                    <li>
+                                        <a href="chomskyGrammar.html">Chomsk Grammar</a>
+                                    </li>
+                                    <li>
+                                        <a href="context.html">Conext-sensitive and free Languages</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Formal Languages <span class="caret"></span></a>
+                            </li>
+                            <li class="dropdown">
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="Topdown">
+                                        <a href="topDown.html">Top-down parsing</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammaticalRules.html">Grammatical rules 1 and 2</a>
+                                    </li>
+                                    <li>
+                                        <a href="leftRecursion.html">Left recursion removal</a>
+                                    </li>
+                                    <li>
+                                        <a href="grammarAmbiguity.html">Grammar ambiguity</a>
+                                    </li>
+                                </ul>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">Syntax Analysis&nbsp;<span class="caret"></span></a>
+                            </li>
+                            <li>
+                                <a href="applet.html">Applet</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-9">
+                        <h1 class="text-left">Context-sensitive and Context-free Languages</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-justify">Context-free language – a formal language, which is defined by the set
+                            of context-free rules. A production is context-free if and only if:
+                            <br>
+                            <br>
+                        </p>
+                        <div class="section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <pre>
+                                            <code>
+                                                <br>A ::= ξ (A∈N, ξ ∈(N ∪ T)*)</code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>it is called a context-sensitive production, because a replacement by
+                        A can happen only in the context of α and β.&nbsp;
+                        <br>
+                        <br>Example 1:&nbsp;
+                        <br>
+                        <br>This example incorporates a grammar in which, by means of recursion, an
+                        infinite&nbsp;number of&nbsp;sentences can be generated by means of a finite
+                        set of productions.&nbsp;
+                        <br>
+                        <br>
+                        <br>
+                    </p>
+                    <div class="section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <pre>
+                                        <code>
+                                            <br>S ::= xA A ::= z|yA</code>
+                                    </pre>
+                                </div>
+                            </div>
+                            <p>Set of sentences that can be generated from start symbol S:</p>
+                        </div>
+                        <div class="col-md-11">
+                            <pre>
+                                <code>
+                                    <br>xz
+                                    <br>xyz xyyz xyyyz ...</code>
+                            </pre>
+                        </div>
+                    </div>
+                    <code>
+                        <div id="fullcarousel-example" data-interval="5000" class="carousel slide"
+                        data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item">
+                                    <img src="https://unsplash.imgix.net/photo-1421986527537-888d998adb74?q=75&amp;fm=jpg&amp;s=e633562a1da53293c4dc391fd41ce41d">
+                                </div>
+                                <div class="item">
+                                    <img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png">
+                                    <div class="carousel-caption">
+                                        <h2>Title</h2>
+                                        <p>Description</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <footer class="section section-info">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-12">
+                                        <p class="text-inverse text-right">© Copyright all rights reserved</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

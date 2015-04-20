@@ -26,13 +26,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <ul class="nav nav-pills">
-                            <li class="active">
+                            <li>
                                 <a href="index.html">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="active dropdown">
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="languageDefinition.html">Languages definition</a>
+                                        <a href="languageDefinition.html">Language definition</a>
                                     </li>
                                     <li>
                                         <a href="BNF.html">BNF</a>
@@ -50,7 +50,7 @@
                             <li class="dropdown">
                                 <ul class="dropdown-menu" role="menu">
                                     <li class="Topdown">
-                                        <a href="topDown.html">Top-down parsing</a>
+                                        <a href="#topDown.html">Top-down parsing</a>
                                     </li>
                                     <li>
                                         <a href="grammaticalRules.html">Grammatical rules 1 and 2</a>
@@ -76,16 +76,65 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-6">
-                        <h1>Home</h1>
+                    <div class="col-md-9">
+                        <h1 class="text-left">Language definition</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-justify">In formal languages, we encounter the term symbol which is the basic element
+                            of a dictionary. Dictionary is the basis of every language. It is the feature
+                            of every language that certain sequences of words are recognised as correct,
+                            and others as incorrect. A correct sequence of words is called &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a sentence. The decision on the
+                            correctness of a sentence is made based on grammar, that is the structure
+                            of language (syntax). Syntax is composed of rules and laws that define
+                            a set of formally correct sentences. A set of rules that allows to determine
+                            whether a certain set of words is called syntax or semantics. It is noteworthy
+                            that syntax and semantics are closely related to each other. Formal language
+                            is a subset of a set of finite strings consisting of elements of a finite
+                            set called the alphabet.
+                            <br>
+                            <br>
+                        </p>
+                        <p class="text-danger">
+                            <b>
+                                <u>Example1:</u>
+                            </b>
+                        </p>
+                        <div class="section">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-11">
+                                        <pre>
+                                            <code>
+                                                <br>&lt;sentence&gt; ::= &lt;objective&gt; &lt;predicate&gt;
+                                                <br>&lt;objective&gt;::= flowers | stars
+                                                <br>&lt;predicate&gt;::= bloom | shine</code>
+                                        </pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p></p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="text-justify">This website is dedicated to Mathematical Linguistic subject.
-                            <br>It contains&nbsp;theoretical materials and interactive exercises.&nbsp;
-                            <br>The purpose of developpoing such web application is to help&nbsp;students&nbsp;
-                            <br>to become better acquainted&nbsp;with the content of the subject.</p>
+                        <p>Sentences that can be constructed from this formal grammar: flowers bloom,
+                            stars shine, stars bloom, flowers shine.
+                            <br>
+                            <br>&nbsp;In the formal language defined by the grammar from example 1, the
+                            sentence consists of a subject and a predicate that follows it. Subject
+                            is the words stars or the word flowers, whereas predicate is the word bloom
+                            or the word shine. Syntax determines the correct structures of sentences,
+                            however, it does not deal with their meaning, that is their semantics.
+                            The last two sentences are grammatically correct, however, their semantics
+                            is incorrect.</p>
                     </div>
                 </div>
             </div>
@@ -107,11 +156,6 @@
             <a class="left carousel-control" href="#fullcarousel-example" data-slide="prev"><i class="icon-prev fa fa-angle-left"></i></a>
             <a class="right carousel-control" href="#fullcarousel-example" data-slide="next"><i class="icon-next fa fa-angle-right"></i></a>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <br>
